@@ -27,22 +27,22 @@
 			</div>
 			<div class="wrapper">
 				<p>This one should implement the values into the actual graphics.</p>
-				<div class="d3-wrapper" id="numTwo">
-					<script>
+				<div class="d3-wrapper" id="numTwo"></div>
+				<script>
 						
-						d3.select("#numTwo")
-							.selectAll("div")
-							.data(dataSet)
-							.enter()
-							.append("p")
-							.attr("fill","steelblue")
-							.text("asdfs")
-							.style("font-size", function (d) {
-								return (d/3)+"em";
-							} );
+					d3.select("#numTwo")
+						.selectAll("div")
+						.data(dataSet)
+						.enter()
+						.append("p")
+						.attr("fill","steelblue")
+						.text("asdfs")
+						.style("font-size", function (d) {
+							return (d/3)+"em";
+						} );
 						
-					</script>
-				</div>
+				</script>
+				<p>You can see the next page <a href="page_3.html">here</a>.</p>	
 			</div>
 		</div>
 	</body>
