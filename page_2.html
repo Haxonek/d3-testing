@@ -1,0 +1,49 @@
+<html>
+	<head>
+		<title>D3</title>
+		<link href="style.css" rel="stylesheet"/>
+		<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="wrapper">
+				<p>Here we can hopefully implement some data into the page.</p>
+				<div class="d3-wrapper"></div>
+				<script>
+					var dataSet = [12, 3, 9, 6];
+					
+					var ps = d3.select(".d3-wrapper")
+						.selectAll("p")
+						.data(dataSet)
+						.enter()
+						.append("p")
+						.text( function (d,i) { 
+							return "[" + i + "]" + " = " + d; 
+						} );
+					
+//					check out dashingd3js.com at biding data to dom elements
+					
+				</script>
+			</div>
+			<div class="wrapper">
+				<p>This one should implement the values into the actual graphics.</p>
+				<div class="d3-wrapper" id="numTwo">
+					<script>
+						
+						d3.select("#numTwo")
+							.selectAll("div")
+							.data(dataSet)
+							.enter()
+							.append("p")
+							.attr("fill","steelblue")
+							.text("asdfs")
+							.style("font-size", function (d) {
+								return (d/3)+"em";
+							} );
+						
+					</script>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,78 @@
+<html>
+	<head>
+		<title>D3</title>
+		<link href="style.css" rel="stylesheet"/>
+		<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="wrapper">
+				<p>Hello!  This is a short line of text.</p>
+				<p class="second-paragraph">Here is a second paragraph, within the same wrapper.  Below here in the code we will include some javascript, for testing purposes.</p>
+				<script>
+					d3.select(".wrapper")
+						.append("p")
+						.text("Hello world!  This is apended to the previous text.");
+				</script>
+			</div>
+			<div class="wrapper">
+				<p>This is in the second wrapper.  In here I hope to add a bar graph, using D3.  Everything's static so far.</p>
+				<div class="d3-wrapper">
+					<!-- canvas added here -->
+				</div>
+				<script>					
+					var canvas = d3.select(".d3-wrapper")
+						.append("svg")
+						.attr("width", 600)
+						.attr("height", 220);
+					
+					var cell_1 = canvas.append("rect")
+						.attr("x", 0)
+						.attr("y", 10)
+						.attr("width", 80)
+						.attr("height", data[0])
+						.attr("fill", "steelblue");
+					
+					var cell_2 = canvas.append("rect")
+						.attr("x", 100)
+						.attr("y", 10)
+						.attr("width", 80)
+						.attr("height", data[1])
+						.attr("fill", "steelblue");
+					
+					var cell_3 = canvas.append("rect")
+						.attr("x", 200)
+						.attr("y", 10)
+						.attr("width", 80)
+						.attr("height", data[2])
+						.attr("fill", "steelblue");
+					
+					var cell_4 = canvas.append("rect")
+						.attr("x", 300)
+						.attr("y", 10)
+						.attr("width", 80)
+						.attr("height", data[3])
+						.attr("fill", "steelblue");
+					
+					var cell_5 = canvas.append("rect")
+						.attr("x", 400)
+						.attr("y", 10)
+						.attr("width", 80)
+						.attr("height", data[4])
+						.attr("fill", "steelblue");
+					
+					var cell_6 = canvas.append("rect")
+						.attr("x", 500)
+						.attr("y", 10)
+						.attr("width", 80)
+						.attr("height", data[5])
+						.attr("fill", "steelblue");
+					
+				</script>
+			</div>
+			<div class="wrapper">
+				<p>But we also want to work with data sets, such as the one used here.  This is an attempt at a graph of it.</p>
+			</div>
+		</div>
+	</body>
+</html>

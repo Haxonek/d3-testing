@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<title>D3</title>
+		<link href="style.css" rel="stylesheet"/>
+		<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="wrapper">
+				<p>Here we should use some svg images in the canvas to create a bar graph.</p>
+				<div class="d3-wrapper">
+				</div>
+				<script>
+					var dataSet = [160, 190, 80, 120, 60, 100, 30, 50, 90, 120, 145];
+				
+					var canvas = d3.select(".d3-wrapper")
+						.append("svg")
+						.attr("height","200px")
+						.attr("width","100%");
+					
+					var bars = canvas.selectAll("rect")
+						.data(dataSet)
+						.enter()
+						.append("rect")
+						.attr("x", function (d,i) {
+							return i * (1/dataSet.length)*100 + "%";
+						} )
+						.attr("y", function (d) {
+							return 200 - d + "px";
+						} )
+						.attr("width", (1/dataSet.length)*100 + "%" )
+						.attr("height", function (d) {
+							return d + "px";
+						} );
+					
+					bars.attr("fill","steelblue").attr("class","graph-bar");
+					
+				</script>
+			</div>
+		</div>
+	</body>
+</html>
