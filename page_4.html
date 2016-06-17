@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<title>D3</title>
+		<link href="style.css" rel="stylesheet"/>
+		<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="wrapper">
+				<p>A peice using json.  I'll likely have a fifth page.</p>
+				<div class="d3-wrapper"></div>
+				<script>
+					var someStrings = [
+						{
+							"first": 10,
+							"second": 20,
+							"text": "Hello World"
+						}, {
+							"first": 10,
+							"second": 20,
+							"text": "Hello World"
+						}
+					];
+					
+					var canvas = d3.select(".d3-wrapper").append("svg").text(someString[0].text);
+				</script>
+			</div>
+		</div>
+	</body>
+</html>
